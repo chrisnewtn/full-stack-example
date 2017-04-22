@@ -1,0 +1,40 @@
+{
+  "name": "ui",
+  "version": "0.0.0",
+  "description": "An example frontend written in Vue",
+  "main": "src/index.js",
+  "scripts": {
+    "build": "browserify src -o public/app.js",
+    "watch": "watchify --debug src -o public/app.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/chrisnewtn/full-stack-example.git"
+  },
+  "author": "Chris Newton",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/chrisnewtn/full-stack-example/issues"
+  },
+  "homepage": "https://github.com/chrisnewtn/full-stack-example#readme",
+  "browserify": {
+    "transform": [
+      "envify",
+      "brfs"
+    ]
+  },
+  "browser": {
+    "vue": "vue/dist/vue.common"
+  },
+  "dependencies": {
+    "brfs": "1.4.3",
+    "browserify": "14.0.0",
+    "envify": "4.0.0",
+    "vue": "2.1.10",
+    "vue-router": "2.2.0"
+  },
+  "devDependencies": {
+    "watchify": "3.9.0"
+  }
+}

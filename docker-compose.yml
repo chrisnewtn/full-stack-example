@@ -1,4 +1,8 @@
 version: "3"
+volumes:
+  js-volume:
+    labels:
+      description: "built js goes here"
 services:
   db:
     build: db
@@ -16,8 +20,15 @@ services:
       - db
   ui:
     build: ui
+    command: [npm, run, watch]
+    volumes:
+      - js-volume:/node/public
+      - ./ui/src:/node/src
   web:
     build: web
+    volumes:
+      - js-volume:/usr/share/nginx/js
+      - ./web/public:/usr/share/nginx/html
     ports:
       - "80:80"
       - "443:443"
