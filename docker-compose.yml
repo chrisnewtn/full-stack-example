@@ -1,0 +1,15 @@
+version: "3"
+services:
+  db:
+    build: db
+  api:
+    build: api
+    depends_on:
+      - db
+  ui:
+    build: ui
+  web:
+    build: web
+    ports:
+      - "80:80"
+      - "443:443"
