@@ -2,6 +2,14 @@ version: "3"
 services:
   db:
     build: db
+    env_file:
+      - db.env
+  sql:
+    build: sql
+    env_file:
+      - db.env
+    depends_on:
+      - db
   api:
     build: api
     depends_on:
