@@ -1,0 +1,19 @@
+{
+  "name": "api",
+  "version": "0.0.0",
+  "description": "An example API backed by Postgres",
+  "main": "src/index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/chrisnewtn/full-stack-example.git"
+  },
+  "author": "Chris Newton",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/chrisnewtn/full-stack-example/issues"
+  },
+  "homepage": "https://github.com/chrisnewtn/full-stack-example#readme"
+}
