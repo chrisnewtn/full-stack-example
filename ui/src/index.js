@@ -1,3 +1,6 @@
 'use strict';
 
-document.body.innerHTML = 'it works!';
+const Vue = require('vue');
+const {router} = require('./router');
+
+module.exports = new Vue({router}).$mount('#app');

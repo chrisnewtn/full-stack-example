@@ -16,11 +16,15 @@ services:
       - db
   api:
     build: api
+    env_file:
+      - auth.env
     depends_on:
       - db
   ui:
     build: ui
     command: [npm, run, watch]
+    env_file:
+      - auth.env
     volumes:
       - js-volume:/node/public
       - ./ui/src:/node/src

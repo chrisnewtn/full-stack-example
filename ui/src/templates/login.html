@@ -1,0 +1,7 @@
+<div class="login">
+  <div class="login__providers" v-bind:class="{hidden: showForm}">
+    <a v-on:click="loginWithGoogle" v-bind:class="{disabled_loading: disabledLoading}" class="login__google">
+      Sign in with Google
+    </a>
+  </div>
+</div>
