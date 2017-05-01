@@ -1,11 +1,15 @@
 'use strict';
 
 const http = require('http');
+const express = require('express');
+const {router} = require('./router');
 
-const server = http.createServer((req, res) => {
-  res.statusCode = 200;
-  res.end('Hello World!');
-});
+const app = express();
+
+app.disable('x-powered-by');
+app.use('/v1', router);
+
+const server = http.createServer(app);
 
 server.listen(process.env.APP_PORT, () => {
   const {address, port, family} = server.address();
